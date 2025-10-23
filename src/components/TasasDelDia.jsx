@@ -1,4 +1,41 @@
 const TasasDelDia = () => {
+  fetch("https://bolivarrate.elbernv.com/tasas", { method: "GET" })
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      const dolar = data.find((method) => {
+        return method.nombre === "DOLAR";
+      });
+
+      const dolarspan = document.getElementById("dolar");
+      dolarspan.textContent = dolar.valor;
+
+      const euro = data.find((method) => {
+        return method.nombre === "EURO";
+      });
+
+      const eurospan = document.getElementById("euro");
+      eurospan.textContent = euro.valor;
+
+      console.log(data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
+  fetch("https://bolivarrate.elbernv.com/binance-promedio", { method: "GET" })
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      const dolarbinance = data.find((method) => {
+        return method.nombre === "BINANCE_USDT";
+      });
+
+      const dolarbinancespan = document.getElementById("binance");
+      dolarbinancespan.textContent = dolarbinance.promedio;
+    });
   return (
     <main className="p-6">
       <h1
@@ -15,15 +52,21 @@ const TasasDelDia = () => {
       >
         <div className="flex items-center gap-2 text-2xl">
           <span className="font-semibold text-gray-700">BCV:</span>
-          <span className="text-green-600 font-bold">1$</span>
+          <span id="dolar" className="text-green-600 font-bold">
+            1$
+          </span>
         </div>
         <div className="flex items-center gap-2 text-2xl">
           <span className="font-semibold text-gray-700">EURO:</span>
-          <span className="text-green-600 font-bold">1$</span>
+          <span id="euro" className="text-green-600 font-bold">
+            1$
+          </span>
         </div>
         <div className="flex items-center gap-2 text-2xl">
           <span className="font-semibold text-gray-700">BINANCE:</span>
-          <span className="text-green-600 font-bold">1$</span>
+          <span id="binance" className="text-green-600 font-bold">
+            1$
+          </span>
         </div>
       </div>
     </main>

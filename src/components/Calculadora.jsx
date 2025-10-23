@@ -18,9 +18,9 @@ function Calculadora() {
           />
 
           <select className="mt-2 mb-2 text-xl bg-green-200 p-2 rounded-lg border border-green-400">
-            <option>DOLAR</option>
-            <option>EURO</option>
-            <option>BINANCE</option>
+            <option id="dolar">DOLAR</option>
+            <option id="euro">EURO</option>
+            <option id="binance">BINANCE</option>
           </select>
         </div>
       </div>
