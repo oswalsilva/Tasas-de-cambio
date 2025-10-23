@@ -1,4 +1,8 @@
-function Calculadora() {
+function Calculadora({ setNombreMoneda, montoIngresado, setMontoIngresado }) {
+  const handleChange = (event) => {
+    setNombreMoneda(event.target.value);
+  };
+
   {
     return (
       <div className="ml-113 mr-120 flex flex-col gap-4">
@@ -13,14 +17,19 @@ function Calculadora() {
           <input
             id="monto"
             type="number"
+            value={montoIngresado}
+            onChange={(e) => setMontoIngresado(e.target.value)}
             placeholder="$0.00"
             className="flex-1 block m placeholder-gray-400/70 dark:placeholder-gray-500 rounded-lg border border-green-400 bg-white px-5 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring-red-300 focus:ring-opacity-40 dark:border-blue-400 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300 text-xl"
           />
 
-          <select className="mt-2 mb-2 text-xl bg-green-200 p-2 rounded-lg border border-green-400">
-            <option id="dolar">DOLAR</option>
-            <option id="euro">EURO</option>
-            <option id="binance">BINANCE</option>
+          <select
+            onChange={handleChange}
+            className="mt-2 mb-2 text-xl bg-green-200 p-2 rounded-lg border border-green-400"
+          >
+            <option value={'DOLAR'}>DOLAR</option>
+            <option value={'EURO'}>EURO</option>
+            <option value={'BINANCE'}>BINANCE</option>
           </select>
         </div>
       </div>

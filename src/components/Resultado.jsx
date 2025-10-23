@@ -1,4 +1,4 @@
-function Resultado() {
+function Resultado({ resultado }) {
   {
     return (
       <div
@@ -7,7 +7,7 @@ function Resultado() {
                   bg-green-50 max-w-2xl m-auto"
       >
         <span className="font-semibold text-gray-700  text-2xl">
-          <h2 className="">Resultado</h2>
+          <h2 className="">Resultado: {resultado}</h2>
         </span>
       </div>
     );
