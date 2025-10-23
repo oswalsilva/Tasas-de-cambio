@@ -5,10 +5,10 @@ function Calculadora({ setNombreMoneda, montoIngresado, setMontoIngresado }) {
 
   {
     return (
-      <div className="ml-113 mr-120 flex flex-col gap-4">
+      <div className="flex flex-col h-full justify-center items-center gap-5">
         <label
           htmlFor="monto"
-          className="flex justify-center items-center text-xltext-gray-500 dark:text-gray-300 text-xl "
+          className="flex justify-center items-center text-xl text-back font-semibold text-center sm:text-3xl"
         >
           INDICA EL MONTO
         </label>
@@ -20,7 +20,7 @@ function Calculadora({ setNombreMoneda, montoIngresado, setMontoIngresado }) {
             value={montoIngresado}
             onChange={(e) => setMontoIngresado(e.target.value)}
             placeholder="$0.00"
-            className="flex-1 block m placeholder-gray-400/70 dark:placeholder-gray-500 rounded-lg border border-green-400 bg-white px-5 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring-red-300 focus:ring-opacity-40 dark:border-blue-400 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300 text-xl"
+            className="flex-1 block m placeholder-gray-400/70  rounded-lg border border-green-400 bg-white px-5 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring-red-300 focus:ring-opacity-40 text-xl w-105 h-auto"
           />
 
           <select

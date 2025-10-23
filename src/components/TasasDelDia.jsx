@@ -1,10 +1,10 @@
 const TasasDelDia = ({ dolar, euro, binance }) => {
   return (
-    <main className="p-6">
+    <main className="p-6 flex flex-col justify-center items-center h-50 w-full">
       <h1
         className="text-6xl font-bold text-center  font-sans mb-6 
                  bg-gradient-to-r from-orange-400 to-green-400 bg-clip-text 
-                 text-transparent"
+                 text-transparent r sm:text-left sm:text-7xl"
       >
         TASAS DE CAMBIO
       </h1>
